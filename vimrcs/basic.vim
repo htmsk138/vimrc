@@ -96,7 +96,7 @@ set ignorecase
 set smartcase
 
 " Highlight search results
-set hlsearch
+" set hlsearch
 
 " Makes search act like search in modern browsers
 set incsearch 
@@ -127,6 +127,8 @@ endif
 " Add a bit extra margin to the left
 set foldcolumn=1
 
+" Show line numbers
+set number
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -140,7 +142,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+    colorscheme solarized
 catch
 endtry
 
@@ -179,9 +181,9 @@ set expandtab
 " Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+" 1 tab == 2 spaces
+set shiftwidth=2
+set tabstop=2
 
 " Linebreak on 500 characters
 set lbr
@@ -242,6 +244,7 @@ au TabLeave * let g:lasttab = tabpagenr()
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
 map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+set autochdir
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
